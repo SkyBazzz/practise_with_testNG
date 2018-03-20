@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Regression">
+
+    <test name="Application Test 1" preserve-order="false">
+        <parameter name="browser" value="firefox"></parameter>
+        <parameter name="platform" value="mac"></parameter>
+        <parameter name="response" value="201"></parameter>
+        <groups>
+            <define name="smoke_ui">
+                <include name="smoke"></include>
+                <include name="ui"></include>
+            </define>
+            <run>
+                <include name="smoke_ui"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name="test_classes.GroupsParameters"></class>
+        </classes>
+    </test>
+</suite>

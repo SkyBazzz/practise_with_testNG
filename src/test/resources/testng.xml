@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Regression">
+
+    <test name="Application Test 1">
+        <parameter name="browser" value="firefox"></parameter>
+        <parameter name="platform" value="mac"></parameter>
+        <parameter name="response" value="201"></parameter>
+        <groups>
+            <run>
+                <include name="smoke"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name="test_classes.GroupsParameters"></class>
+        </classes>
+    </test>
+
+    <test name="Application Test 2">
+        <classes>
+            <class name="test_classes.SimpleTestNGAnnotation"></class>
+        </classes>
+    </test>
+</suite>
